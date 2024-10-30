@@ -1,7 +1,7 @@
 <ul>
-	<li>
+	<li *ngFor="let product of products">
 		<figure>
-			<img src="/assets/images/image-waffle-mobile.jpg">
+			<img [src]="product.image.mobile">
 			<button>
 				<img src="assets/images/icon-add-to-cart.svg">
 				<span>Add to Cart</span>
@@ -9,9 +9,9 @@
 		</figure>
 
 		<div class="product-info">
-			<h3 class="product-info__category">Waffle</h3>
-			<p class="product-info__name">Waffle with Berries</p>
-			<span class="product-info__price">$6.50</span>
+			<h3 class="product-info__category">{{product.category}}</h3>
+			<p class="product-info__name">{{product.name}}</p>
+			<span class="product-info__price">${{product.price}}</span>
 		</div>
 	</li>
 </ul>
