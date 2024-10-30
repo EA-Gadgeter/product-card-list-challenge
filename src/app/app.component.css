@@ -1,0 +1,16 @@
+main {
+  width: 100%;
+  min-height: 100dvh;
+
+  padding: 2rem 2rem;
+
+  background: var(--rose-50);
+}
+
+h1 {
+  margin-bottom: 3rem;
+
+  font-size: 3.8rem;
+
+  color: var(--rose-900);
+}
