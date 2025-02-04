@@ -1,0 +1,30 @@
+aside {  
+  margin: 2rem 0;
+  padding: 2rem;
+  padding-bottom: 4rem;
+
+  background-color: var(--white);
+  border-radius: 1rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  color: var(--red);
+}
+
+.no-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 4rem;
+}
+
+.no-items span {
+  margin-top: 2rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  color: var(--rose-400);
+}
