@@ -1,0 +1,15 @@
+button {
+  width: 100%;
+
+  padding: 1.75rem 0;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: var(--main-font);
+
+  border: none;
+
+  color: var(--rose-100);
+  background-color: var(--red);
+  border-radius: 4rem;
+}

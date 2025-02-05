@@ -1,7 +1,6 @@
-aside {  
+aside {
   margin: 2rem 0;
-  padding: 2rem;
-  padding-bottom: 4rem;
+  padding: 2rem 2rem 2.5rem;
 
   background-color: var(--white);
   border-radius: 1rem;
@@ -27,4 +26,58 @@ h3 {
   font-weight: 600;
 
   color: var(--rose-400);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  margin-top: 3rem;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2.5rem;
+}
+
+.cart-total p {
+  font-size: 1.45rem;
+
+  color: var(--rose-900);
+}
+
+.cart-total span {
+  font-size: 2.25rem;
+  font-weight: 700;
+
+  color: var(--rose-900);
+}
+
+.carbon-neutral-delivery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+
+  font-size: 1.45rem;
+
+  border-radius: 1rem;
+  background-color: var(--rose-50);
+}
+
+.carbon-neutral-delivery b {
+  color: var(--rose-900);
+  font-weight: 600;
+}
+
+shared-primary-button {
+  display: block;
+  margin-top: 2.75rem;
 }

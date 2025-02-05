@@ -158,20 +158,8 @@ h3 {
   color: var(--rose-900);
 }
 
-button {
-  width: 100%;
-
+shared-primary-button {
+  display: block;
   margin-top: 2.75rem;
-  padding: 1.75rem 0;
-
-  font-size: 1.6rem;
-  font-weight: 600;
-  font-family: var(--main-font);
-
-  border: none;
-
-  color: var(--rose-100);
-  background-color: var(--red);
-  border-radius: 4rem;
 }
 

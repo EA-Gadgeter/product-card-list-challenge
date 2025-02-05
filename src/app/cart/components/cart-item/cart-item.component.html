@@ -1,0 +1,18 @@
+<li>
+  <div class="cart-item__product-info">
+    <p>{{ cartItemInfo.name }}</p>
+
+    <div class="cart-item__quantity-info">
+      <span class="cart-item__quantity">{{ cartItemInfo.quantity }}x</span>
+      <span class="cart-item__price">&#64; ${{ cartItemInfo.unitPrice }}</span>
+      <span class="cart-item__total">${{ cartItemInfo.unitPrice * cartItemInfo.quantity }}</span>
+    </div>
+  </div>
+
+  <button>
+    <img
+      src="/assets/images/icon-remove-item.svg"
+      alt="Button to remove product from cart"
+    >
+  </button>
+</li>

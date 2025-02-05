@@ -1,9 +1,39 @@
 <aside>
-  <h3>Your Cart (0)</h3>
-  
-  <div class="no-items">
+  <h3>Your Cart ({{ cartItems.length }})</h3>
+
+  <div
+    *ngIf="!cartItems.length"
+    class="no-items"
+  >
     <img src="/assets/images/illustration-empty-cart.svg" alt="">
 
     <span>Your added items will appear here</span>
   </div>
+
+  <div class="cart-container">
+    <ul
+      *ngIf="cartItems.length > 0"
+    >
+      <cart-cart-item
+        *ngFor="let item of cartItems"
+        [cartItemInfo]="item"
+      />
+    </ul>
+
+    <div class="cart-total">
+      <p>Order Total</p>
+
+      <span>$46.50</span>
+    </div>
+  </div>
+
+  <div class="carbon-neutral-delivery">
+    <img src="/assets/images/icon-carbon-neutral.svg" alt="Icon of a tree">
+
+    <p>
+      This is a <b>carbon-neutral</b> delivery
+    </p>
+  </div>
+
+  <shared-primary-button btnText="Confirm Order" />
 </aside>
