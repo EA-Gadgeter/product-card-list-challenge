@@ -2,7 +2,7 @@
 	<li *ngFor="let product of products">
 		<figure>
 			<img [src]="product.image.mobile">
-			<button>
+			<button (click)="onAddToCart(product)">
 				<img src="assets/images/icon-add-to-cart.svg">
 				<span>Add to Cart</span>
 			</button>

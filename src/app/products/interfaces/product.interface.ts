@@ -1,11 +1,12 @@
 export interface Product {
-    image:    Image;
+    id: number;
+    image:    ProductImage;
     name:     string;
     category: string;
     price:    number;
 }
 
-interface Image {
+interface ProductImage {
     thumbnail: string;
     mobile:    string;
     tablet:    string;

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { CartService } from '../../services/cart.service';
+
 import type { CartItem } from '../../interfaces';
 
 @Component({
@@ -10,4 +12,8 @@ import type { CartItem } from '../../interfaces';
 export class CartItemComponent {
   @Input({ required: true })
   public cartItemInfo!: CartItem;
+
+  constructor(
+    private cartService: CartService
+  ) {}
 }

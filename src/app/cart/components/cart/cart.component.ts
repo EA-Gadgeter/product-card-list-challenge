@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import { CartItem } from '../../interfaces';
+8
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'cart-cart',
@@ -8,21 +8,12 @@ import { CartItem } from '../../interfaces';
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-  public cartItems: CartItem[] = [
-    {
-      name: "Classic Tiramisu",
-      quantity: 1,
-      unitPrice: 5.50,
-    },
-    {
-      name: "Vanilla Bean Crème Brûlée",
-      quantity: 4,
-      unitPrice: 7.00,
-    },
-    {
-      name: "Vanilla Panna Cotta",
-      quantity: 2,
-      unitPrice: 6.50,
-    }
-  ]
+
+  constructor(
+    private cartService: CartService
+  ) {}
+
+  public get cart() {
+    return this.cartService.cart;
+  }
 }
