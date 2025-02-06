@@ -1,17 +1,6 @@
 <ul>
-	<li *ngFor="let product of products">
-		<figure>
-			<img [src]="product.image.mobile">
-			<button (click)="onAddToCart(product)">
-				<img src="assets/images/icon-add-to-cart.svg">
-				<span>Add to Cart</span>
-			</button>
-		</figure>
-
-		<div class="product-info">
-			<h3 class="product-info__category">{{product.category}}</h3>
-			<p class="product-info__name">{{product.name}}</p>
-			<span class="product-info__price">${{product.price}}</span>
-		</div>
-	</li>
+	<products-product-card
+    *ngFor="let product of products"
+    [product]="product"
+  />
 </ul>

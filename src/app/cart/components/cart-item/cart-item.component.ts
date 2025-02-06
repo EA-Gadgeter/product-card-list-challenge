@@ -16,4 +16,8 @@ export class CartItemComponent {
   constructor(
     private cartService: CartService
   ) {}
+
+  public onDeleteItemFromCart(id: number): void {
+    this.cartService.deleteProductFromCartById(id);
+  }
 }

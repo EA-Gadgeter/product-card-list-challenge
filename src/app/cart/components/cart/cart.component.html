@@ -10,10 +10,11 @@
     <span>Your added items will appear here</span>
   </div>
 
-  <div class="cart-container">
-    <ul
-      *ngIf="cart.length > 0"
-    >
+  <div
+    *ngIf="cart.length > 0"
+    class="cart-container"
+  >
+    <ul>
       <cart-cart-item
         *ngFor="let item of cart"
         [cartItemInfo]="item"
@@ -27,7 +28,10 @@
     </div>
   </div>
 
-  <div class="carbon-neutral-delivery">
+  <div
+    *ngIf="cart.length > 0"
+    class="carbon-neutral-delivery"
+  >
     <img src="/assets/images/icon-carbon-neutral.svg" alt="Icon of a tree">
 
     <p>

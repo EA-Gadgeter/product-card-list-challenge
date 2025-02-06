@@ -1,0 +1,37 @@
+<li>
+  <figure>
+    <img
+      class="product-image"
+      [src]="product.image.mobile"
+    >
+    <button
+      *ngIf="ofThisProductInCart === 0"
+      (click)="onAddToCart(product)"
+      class="product-card-button product-card-button--not-selected"
+    >
+      <img src="/assets/images/icon-add-to-cart.svg">
+      <span>Add to Cart</span>
+    </button>
+
+    <div
+      *ngIf="ofThisProductInCart > 0"
+      class="product-card-button product-card-button--selected"
+    >
+      <button (click)="onRemoveProductOfCart(product.id)">
+        <img src="/assets/images/icon-decrement-quantity.svg" alt="Decrement product from cart">
+      </button>
+
+      <span>{{ ofThisProductInCart }}</span>
+
+      <button (click)="onAddToCart(product)">
+        <img src="/assets/images/icon-increment-quantity.svg" alt="Increment product from cart">
+      </button>
+    </div>
+  </figure>
+
+  <div class="product-info">
+    <h3 class="product-info__category">{{product.category}}</h3>
+    <p class="product-info__name">{{product.name}}</p>
+    <span class="product-info__price">${{product.price}}</span>
+  </div>
+</li>
