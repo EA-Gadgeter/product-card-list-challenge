@@ -10,6 +10,8 @@ import type { CartItem } from '@/app/cart/interfaces';
 export class CartService {
   private _cart: CartItem[] = [];
 
+  public deletedItem$ = new Subject<CartItem>();
+
   constructor() { }
 
   public get cart() {
@@ -27,10 +29,6 @@ export class CartService {
     return ++this._cart[productIndex].quantity;
   }
 
-  public deleteProductFromCartByIndex(productIndex: number): void {
-    this._cart.splice(productIndex, 1);
-  }
-
   public deleteProductFromCartById(id: number) {
     const productIndex = this._cart.findIndex(cartItem => cartItem.id === id);
 
@@ -38,7 +36,8 @@ export class CartService {
       return;
     }
 
-    this.deleteProductFromCartByIndex(productIndex);
+    this.deletedItem$.next(this._cart[productIndex]);
+    this._cart.splice(productIndex, 1);
   }
 
   public removeProductFromCart(id: number): number {
@@ -52,7 +51,7 @@ export class CartService {
       return --this._cart[productIndex].quantity;
     }
 
-    this.deleteProductFromCartByIndex(productIndex);
+    this._cart.splice(productIndex, 1);
     return 0;
   }
 }

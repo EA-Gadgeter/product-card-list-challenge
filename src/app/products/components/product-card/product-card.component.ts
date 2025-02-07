@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { tap } from 'rxjs/operators';
+
 import { CartService } from '@/app/cart/services/cart.service';
 
 import type { Product } from '@/app/products/interfaces/product.interface';
@@ -14,6 +16,15 @@ export class ProductCardComponent {
   public product!: Product;
 
   public ofThisProductInCart: number = 0;
+
+  public productWasDeleted = this.cartService.deletedItem$
+    .pipe(
+      tap(item => {
+        if (item.id === this.product.id) {
+          this.ofThisProductInCart = 0;
+        }
+      })
+    )
 
   constructor(
     private cartService: CartService

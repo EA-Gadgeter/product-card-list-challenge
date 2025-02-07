@@ -39,5 +39,8 @@
     </p>
   </div>
 
-  <shared-primary-button btnText="Confirm Order" />
+  <shared-primary-button
+    *ngIf="cart.length > 0"
+    btnText="Confirm Order"
+  />
 </aside>

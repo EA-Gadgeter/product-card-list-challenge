@@ -35,3 +35,5 @@
     <span class="product-info__price">${{product.price}}</span>
   </div>
 </li>
+
+<ng-container *ngIf="productWasDeleted | async" />
