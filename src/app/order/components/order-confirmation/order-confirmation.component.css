@@ -25,6 +25,28 @@ dialog[open] {
     }
 }
 
+@media screen and (width >= 768px) {
+  dialog[open] {
+    padding: 4rem;
+  }
+
+  br {
+    display: none;
+  }
+}
+@media screen and (width >= 1024px) {
+    dialog[open] {
+      width: 50rem;
+      height: fit-content;
+
+      left: calc(50% - 25rem);
+      top: 50%;
+      transform: translateY(-50%);
+
+      border-radius: 1rem;
+    }
+}
+
 dialog::backdrop {
   opacity: 50%;
   background-color: #000000;
