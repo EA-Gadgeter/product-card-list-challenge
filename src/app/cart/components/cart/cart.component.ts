@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-8
+
 import { CartService } from '../../services/cart.service';
+import { OrderModalService } from '@/app/order/services/order-modal.service';
 
 @Component({
   selector: 'cart-cart',
@@ -10,10 +11,15 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent {
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private orderModalService: OrderModalService
   ) {}
 
   public get cart() {
     return this.cartService.cart;
+  }
+
+  public onConfirmOrder() {
+    this.orderModalService.openModal();
   }
 }

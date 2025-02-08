@@ -12,6 +12,8 @@ export class CartService {
 
   public deletedItem$ = new Subject<CartItem>();
 
+  public clearedCart$ = new Subject<void>();
+
   constructor() { }
 
   public get cart() {
@@ -53,5 +55,10 @@ export class CartService {
 
     this._cart.splice(productIndex, 1);
     return 0;
+  }
+
+  public clearCart() {
+    this._cart = [];
+    this.clearedCart$.next();
   }
 }

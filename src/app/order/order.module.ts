@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { OrderItemComponent } from './components/order-item/order-item.component';
 
 @NgModule({
   declarations: [
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    OrderItemComponent
   ],
   imports: [
     CommonModule,

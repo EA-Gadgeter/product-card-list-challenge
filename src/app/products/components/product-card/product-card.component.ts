@@ -26,6 +26,11 @@ export class ProductCardComponent {
       })
     )
 
+  public cartWasCleared = this.cartService.clearedCart$
+    .pipe(
+      tap(() => this.ofThisProductInCart = 0)
+    )
+
   constructor(
     private cartService: CartService
   ) {}

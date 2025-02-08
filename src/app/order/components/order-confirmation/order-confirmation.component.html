@@ -1,4 +1,4 @@
-<dialog>
+<dialog #orderModal>
   <img
     class="icon-order-confirmed"
     src="/assets/images/icon-order-confirmed.svg"
@@ -14,113 +14,9 @@
 
   <div class="items">
     <ul class="items-list">
-      <li class="list-item">
-        <div class="list-item__left">
-          <img src="/assets/images/image-waffle-thumbnail.jpg" alt="">
-
-          <div class="list-item__product-info">
-            <p>Classic Tiramisu</p>
-
-            <div class="list-item__quantity-info">
-              <span class="list-item__quantity">1px</span>
-
-              <span class="list-item__quantity-total">&#64; $720</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="list-item__item-total">$5.50</p>
-      </li>
-
-      <li class="list-item">
-        <div class="list-item__left">
-          <img src="/assets/images/image-waffle-thumbnail.jpg" alt="">
-
-          <div class="list-item__product-info">
-            <p>Classic Tiramisu</p>
-
-            <div class="list-item__quantity-info">
-              <span class="list-item__quantity">1px</span>
-
-              <span class="list-item__quantity-total">&#64; $720</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="list-item__item-total">$5.50</p>
-      </li>
-
-      <li class="list-item">
-        <div class="list-item__left">
-          <img src="/assets/images/image-waffle-thumbnail.jpg" alt="">
-
-          <div class="list-item__product-info">
-            <p>Classic Tiramisu</p>
-
-            <div class="list-item__quantity-info">
-              <span class="list-item__quantity">1px</span>
-
-              <span class="list-item__quantity-total">&#64; $720</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="list-item__item-total">$5.50</p>
-      </li>
-
-      <li class="list-item">
-        <div class="list-item__left">
-          <img src="/assets/images/image-waffle-thumbnail.jpg" alt="">
-
-          <div class="list-item__product-info">
-            <p>Classic Tiramisu</p>
-
-            <div class="list-item__quantity-info">
-              <span class="list-item__quantity">1px</span>
-
-              <span class="list-item__quantity-total">&#64; $720</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="list-item__item-total">$5.50</p>
-      </li>
-
-      <li class="list-item">
-        <div class="list-item__left">
-          <img src="/assets/images/image-waffle-thumbnail.jpg" alt="">
-
-          <div class="list-item__product-info">
-            <p>Classic Tiramisu</p>
-
-            <div class="list-item__quantity-info">
-              <span class="list-item__quantity">1px</span>
-
-              <span class="list-item__quantity-total">&#64; $720</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="list-item__item-total">$5.50</p>
-      </li>
-
-      <li class="list-item">
-        <div class="list-item__left">
-          <img src="/assets/images/image-waffle-thumbnail.jpg" alt="">
-
-          <div class="list-item__product-info">
-            <p>Classic Tiramisu</p>
-
-            <div class="list-item__quantity-info">
-              <span class="list-item__quantity">1px</span>
-
-              <span class="list-item__quantity-total">&#64; $720</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="list-item__item-total">$5.50</p>
-      </li>
+      <order-order-item *ngFor="let item of cart"
+        [cartItem]="item"
+      />
     </ul>
 
     <div class="order-total">
@@ -130,5 +26,8 @@
     </div>
   </div>
 
-  <shared-primary-button btnText="Start New Order" />
+  <shared-primary-button
+    (click)="onStartNewOrder()"
+    btnText="Start New Order"
+  />
 </dialog>
