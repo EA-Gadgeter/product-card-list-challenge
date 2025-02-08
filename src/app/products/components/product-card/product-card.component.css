@@ -19,6 +19,13 @@ li figure {
   object-position: center;
 }
 
+@media screen and (width > 768px) {
+  .product-image {
+    height: 23rem;
+    object-fit: cover;
+  }
+}
+
 .product-card-button {
   width: 16rem;
   height: 4.5rem;
@@ -38,6 +45,7 @@ li figure {
   font-weight: 600;
 
   border-radius: 4rem;
+  cursor: pointer;
 }
 
 .product-card-button--not-selected {

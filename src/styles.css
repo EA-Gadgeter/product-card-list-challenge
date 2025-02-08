@@ -43,6 +43,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: var(--main-font), sans-serif;
+  background: var(--rose-50);
 }
 
 .attribution {

@@ -12,4 +12,5 @@ button {
   color: var(--rose-100);
   background-color: var(--red);
   border-radius: 4rem;
+  cursor: pointer;
 }
