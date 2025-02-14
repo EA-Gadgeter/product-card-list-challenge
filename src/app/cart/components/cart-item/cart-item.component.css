@@ -54,4 +54,14 @@ button {
   border: 0.15rem solid var(--rose-400);
   background-color: transparent;
   cursor: pointer;
+
+  transition: all 100ms ease-in-out;
+}
+
+button:hover {
+  border-color: var(--rose-900);
+}
+
+button:hover svg path {
+  fill: var(--rose-900);
 }

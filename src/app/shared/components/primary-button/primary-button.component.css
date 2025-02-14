@@ -13,4 +13,10 @@ button {
   background-color: var(--red);
   border-radius: 4rem;
   cursor: pointer;
+
+  transition: filter 100ms ease-in-out;
+}
+
+button:hover {
+  filter: brightness(85%);
 }

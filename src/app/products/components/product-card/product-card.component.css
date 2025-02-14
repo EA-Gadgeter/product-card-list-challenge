@@ -53,9 +53,16 @@ li figure {
 
   background-color: var(--white);
   border: 0.1rem solid var(--rose-400);
+
+  transition: all 100ms ease-in-out;
 }
 
-.product-card-button--not-selected img {
+.product-card-button--not-selected:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.product-card-button--not-selected svg {
   width: 2rem;
   height: 2rem;
 
@@ -83,6 +90,16 @@ li figure {
   border: 0.15rem solid var(--white);
   background-color: transparent;
   cursor: pointer;
+
+  transition: all 100ms ease-in-out;
+}
+
+.product-card-button--selected button:hover {
+  background-color: var(--white);
+}
+
+.product-card-button--selected button:hover svg path {
+  fill: var(--red);
 }
 
 .product-info {
