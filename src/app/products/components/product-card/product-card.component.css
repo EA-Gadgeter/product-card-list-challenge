@@ -6,6 +6,13 @@ li figure {
   width: 100%;
 
   position: relative;
+
+  border-radius: 1rem;
+  border: 0.2rem transparent solid;
+}
+
+li figure.selected {
+  border-color: var(--red);
 }
 
 .product-image {

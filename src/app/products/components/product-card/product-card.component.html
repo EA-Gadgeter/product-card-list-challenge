@@ -1,5 +1,9 @@
 <li>
-  <figure>
+  <figure
+    [ngClass]="{
+      'selected': ofThisProductInCart > 0,
+    }"
+  >
     <img
       class="product-image"
       [src]="product.image.mobile"
@@ -36,7 +40,7 @@
   <div class="product-info">
     <h3 class="product-info__category">{{product.category}}</h3>
     <p class="product-info__name">{{product.name}}</p>
-    <span class="product-info__price">${{product.price}}</span>
+    <span class="product-info__price">{{product.price | currency}}</span>
   </div>
 </li>
 
