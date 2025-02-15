@@ -21,6 +21,10 @@ export class OrderConfirmationComponent implements OnInit {
     this.orderModalService.dialogElement = this.dialogElement;
   }
 
+  public get totalPrice(){
+    return this.cartService.totalPrice;
+  }
+
   public get cart() {
     return this.cartService.cart;
   }

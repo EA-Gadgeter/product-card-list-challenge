@@ -9,6 +9,7 @@ import type { CartItem } from '@/app/cart/interfaces';
 })
 export class CartService {
   private _cart: CartItem[] = [];
+  private _totalPrice = 0;
 
   public deletedItem$ = new Subject<CartItem>();
 
@@ -20,14 +21,20 @@ export class CartService {
     return [...this._cart];
   }
 
+  public get totalPrice() {
+    return this._totalPrice;
+  }
+
   public addProductToCart(item: CartItem): number {
     const productIndex = this._cart.findIndex(cartItem => cartItem.id === item.id);
 
     if (productIndex === -1) {
       this._cart.push(item);
+      this._totalPrice += item.unitPrice;
       return 1 ;
     }
 
+    this._totalPrice += item.unitPrice;
     return ++this._cart[productIndex].quantity;
   }
 
@@ -38,7 +45,11 @@ export class CartService {
       return;
     }
 
+    const pricedReduce = this._cart[productIndex].unitPrice * this._cart[productIndex].quantity;
+
     this.deletedItem$.next(this._cart[productIndex]);
+    this._totalPrice -= pricedReduce;
+
     this._cart.splice(productIndex, 1);
   }
 
@@ -50,15 +61,18 @@ export class CartService {
     }
 
     if (this._cart[productIndex].quantity > 1) {
+      this._totalPrice -= this._cart[productIndex].unitPrice;
       return --this._cart[productIndex].quantity;
     }
 
+    this._totalPrice -= this._cart[productIndex].unitPrice;
     this._cart.splice(productIndex, 1);
     return 0;
   }
 
   public clearCart() {
     this._cart = [];
+    this._totalPrice = 0;
     this.clearedCart$.next();
   }
 }

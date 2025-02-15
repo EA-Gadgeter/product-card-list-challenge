@@ -8,10 +8,10 @@
       <div class="list-item__quantity-info">
         <span class="list-item__quantity">{{ cartItem.quantity }}px</span>
 
-        <span class="list-item__quantity-total">&#64; ${{ cartItem.unitPrice }}</span>
+        <span class="list-item__quantity-total">&#64; {{ cartItem.unitPrice | currency }}</span>
       </div>
     </div>
   </div>
 
-  <p class="list-item__item-total">${{ cartItem.unitPrice * cartItem.quantity }}</p>
+  <p class="list-item__item-total">{{ cartItem.unitPrice * cartItem.quantity | currency }}</p>
 </li>

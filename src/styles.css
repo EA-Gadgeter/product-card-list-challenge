@@ -14,19 +14,19 @@
 
 @font-face {
   font-family: "Red Hat";
-  src: url("/assets/fonts/RedHatText-Regular.ttf");
+  src: url("fonts/RedHatText-Regular.ttf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Red Hat";
-  src: url("/assets/fonts/RedHatText-SemiBold.ttf");
+  src: url("fonts/RedHatText-SemiBold.ttf");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Red Hat";
-  src: url("/assets/fonts/RedHatText-Bold.ttf");
+  src: url("fonts/RedHatText-Bold.ttf");
   font-weight: 700;
 }
 

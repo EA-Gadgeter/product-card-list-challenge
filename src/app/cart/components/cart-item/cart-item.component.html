@@ -4,8 +4,8 @@
 
     <div class="cart-item__quantity-info">
       <span class="cart-item__quantity">{{ cartItemInfo.quantity }}x</span>
-      <span class="cart-item__price">&#64; ${{ cartItemInfo.unitPrice }}</span>
-      <span class="cart-item__total">${{ cartItemInfo.unitPrice * cartItemInfo.quantity }}</span>
+      <span class="cart-item__price">&#64; {{ cartItemInfo.unitPrice | currency }}</span>
+      <span class="cart-item__total">{{ cartItemInfo.unitPrice * cartItemInfo.quantity | currency }}</span>
     </div>
   </div>
 

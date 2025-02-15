@@ -5,7 +5,7 @@
     *ngIf="!cart.length"
     class="no-items"
   >
-    <img src="/assets/images/illustration-empty-cart.svg" alt="">
+    <img src="./assets/images/illustration-empty-cart.svg" alt="">
 
     <span>Your added items will appear here</span>
   </div>
@@ -24,7 +24,7 @@
     <div class="cart-total">
       <p>Order Total</p>
 
-      <span>$46.50</span>
+      <span>{{ totalPrice | currency }}</span>
     </div>
   </div>
 
@@ -32,7 +32,7 @@
     *ngIf="cart.length > 0"
     class="carbon-neutral-delivery"
   >
-    <img src="/assets/images/icon-carbon-neutral.svg" alt="Icon of a tree">
+    <img src="./assets/images/icon-carbon-neutral.svg" alt="Icon of a tree">
 
     <p>
       This is a <b>carbon-neutral</b> delivery
